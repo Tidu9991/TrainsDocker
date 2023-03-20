@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Trains.Models.TrainStation>
+
+@{
+    ViewData["Title"] = "AvailableTrains";
+
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+
+<h1>AvailableTrains</h1>
+<div class="container-fluid" style="background-color:aqua; ">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Train_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Station_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Station_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Arrival_Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departure_Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Running_Days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Moving_Towards)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Train_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Train_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Station_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Station_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Running_Days)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Moving_Towards)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
+</div>

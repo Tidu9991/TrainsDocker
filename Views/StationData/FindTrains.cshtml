@@ -1,0 +1,67 @@
+﻿@model Trains.Models.Input
+
+@{
+    ViewData["Title"] = "FindTrains";
+}
+
+<h1>FindTrains</h1>
+<h2>StationCode should in Capital Letters,Date in 24 Hrs,Days with Firstetter Capital </h2>
+<table border="1">
+    <tr>
+        <th>Station Code</th>
+        <th>Station Name</th>
+    </tr>
+    <tr>
+        <td>VSKP</td>
+        <td>VISAKHAPATNAM</td>
+    </tr>
+    <tr>
+        <td>PAL</td>
+        <td>PALASA</td>
+    </tr>
+    <tr>
+        <td>BAM</td>
+        <td>BERHAPUR</td>
+    </tr>
+    <tr>
+        <td>KUR</td>
+        <td>KHURDHA</td>
+    </tr>
+    <tr>
+        <td>BBS</td>
+        <td>BHUBNESWAR</td>
+    </tr>
+</table>
+
+<h4>Input</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AvailableTrains">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Station_Id" class="control-label"></label>
+                <input asp-for="Station_Id" class="form-control" />
+                <span asp-validation-for="Station_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AvailableTrains">AvailableTrains</a>
+</div>
+
